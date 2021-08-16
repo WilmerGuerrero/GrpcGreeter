@@ -1,0 +1,23 @@
+﻿syntax = "proto3";
+import "google/protobuf/Empty.proto";
+option csharp_namespace = "GrpcGreeterClient";
+
+package Product;
+
+service Producs{
+	rpc GetProducts(google.protobuf.Empty) returns (ProductResponseList);
+}
+
+message ProductResponse{
+	int32 Id = 1;
+	int32 StockId = 2;
+	string Name = 3;
+	double Price = 4;
+}
+
+message ProductResponseList{
+	repeated ProductResponse products = 1;
+}
+
+
+
